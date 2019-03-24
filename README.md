@@ -20,12 +20,14 @@ ssh appuser@someinternalhost
 # Установка alias'а на 'appuser@someinternalhost'.
 ```
 Host someinternalhost
-HostName 10.132.0.8
 User appuser
+HostName 10.132.0.8
 IdentityFile ~/.ssh/appuser
 ProxyCommand ssh appuser@35.206.128.169 -W %h:%p
 
 Host bastion
+User appuser
+Hostname 35.206.128.169
 IdentityFile ~/.ssh/appuser
 ```
 
